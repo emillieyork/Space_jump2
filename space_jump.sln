@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30204.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "space_jump", "space_jump.csproj", "{5DB76B1A-0CFB-4C6C-A3FF-58F320A51A48}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5DB76B1A-0CFB-4C6C-A3FF-58F320A51A48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DB76B1A-0CFB-4C6C-A3FF-58F320A51A48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DB76B1A-0CFB-4C6C-A3FF-58F320A51A48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DB76B1A-0CFB-4C6C-A3FF-58F320A51A48}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {44416027-4D10-4907-923D-2EC3C1E787B9}
+	EndGlobalSection
+EndGlobal
