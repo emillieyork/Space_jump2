@@ -11,19 +11,19 @@ namespace space_jump
     {
         //declare fields to use in the class
         public int x, y, width, height;//variables for the rectangle
-        public Image Heart22;//variable for the hearts image
+        public Image Heart1;//variable for the hearts image
         Random xspeed = new Random();
         public Rectangle heartRec;//variable for a rectangle to place 
         //create a constructor (initialises the value of the feilds)
 
         public Heart (int spacing)
         {
-            x = 10;
-            y = spacing;
+            x = 384;
+            y = 320;
             width = 20;
             height = 20;
             // Heart2 contains the pnlgame.png image
-            Heart22 = Properties.Resources.Heart1;
+            Heart1 = Properties.Resources.Heart1;
             heartRec = new Rectangle(x, y, width, height);
             
         }
@@ -32,7 +32,7 @@ namespace space_jump
         public void DrawHeart(Graphics g)
         {
             heartRec = new Rectangle(x, y, width, height);
-            g.DrawImage(Heart22, heartRec);
+            g.DrawImage(Heart1, heartRec);
 
         }
     }

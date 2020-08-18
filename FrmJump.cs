@@ -18,7 +18,7 @@ namespace space_jump
         // declare space for an array of 7 objects called asteroid 
         Asteroid[] asteroids = new Asteroid[12];
         Random xspeed = new Random();
-        Mario mario = new Mario();
+        Mario mario1 = new Mario();
         bool left, right, up, down, jump;
         string move;
         int score, lives;
@@ -33,7 +33,6 @@ namespace space_jump
             }
         }
 
-        
 
         private void FrmJump_KeyDown(object sender, KeyEventArgs e)
         {
@@ -94,7 +93,7 @@ namespace space_jump
             {
                 asteroids[i].MoveAsteroid();
 
-                if (mario.marioRec.IntersectsWith(asteroids[i].asteroidRec))
+                if (mario1.marioRec.IntersectsWith(asteroids[i].asteroidRec))
                 {
                     //reset planet[i] back to side of panel
                     asteroids[i].x = 30; // set  y value of asteroidRec
@@ -116,6 +115,36 @@ namespace space_jump
             }
 
             PnlGame.Invalidate();//makes the paint event fire to redraw the panel
+            if (up) //if up key pressed 
+            {
+                if (mario1.y < 10)
+                    //check to see if mario within 10 of up side
+                    if (mario1.y < 10)//check to see if mario within 10 of top
+                    {
+                        mario1.y = 10;
+                        //if it is < 10 away "bounce" it (set position at 10)
+                    }
+                    else
+                    {
+                        mario1.y -= 5;
+                        //else move 5 up
+                    }
+            }
+            if (down) //if down key pressed 
+            {
+                if (mario1.y < 10)
+                    //check to see if mario within 10 of up side
+                    if (mario1.y < 10)//check to see if mario within 10 of top
+                    {
+                        mario1.y = 10;
+                        //if it is < 10 away "bounce" it (set position at 10)
+                    }
+                    else
+                    {
+                        mario1.y += 5;
+                        //else move 5 down
+                    }
+            }
         }
 
         private void PnlGame_Paint(object sender, PaintEventArgs e)
@@ -133,7 +162,7 @@ namespace space_jump
                 asteroids[i].DrawAsteroid(g);
 
             }
-            mario.DrawMario(g);
+            mario1.DrawMario(g);
 
         }
 
@@ -142,22 +171,22 @@ namespace space_jump
             if (right) // if right arrow key pressed
             {
                 move = "right";
-                mario.MoveMario(move);
+                mario1.MoveMario(move);
             }
             if (left) // if left arrow key pressed
             {
                 move = "left";
-                mario.MoveMario(move);
+                mario1.MoveMario(move);
             }
             if (down) // if down arrow key pressed
             {
                 move = "down";
-                mario.MoveMario(move);
+                mario1.MoveMario(move);
             }
             if (up) // if up arrow key pressed
             {
                 move = "up";
-                mario.MoveMario(move);
+                mario1.MoveMario(move);
             }
 
         }

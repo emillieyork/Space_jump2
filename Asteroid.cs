@@ -14,7 +14,6 @@ namespace space_jump
         public Image asteroidImage;//variable for the Asteroid's image
         Random xspeed = new Random();
         public Rectangle asteroidRec;//variable for a rectangle to place our image in
-        public int score;
         //Create a constructor (initialises the values of the fields)
         public Asteroid(int spacing)
         {

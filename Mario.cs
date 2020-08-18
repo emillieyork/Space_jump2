@@ -11,7 +11,7 @@ namespace space_jump
     {
         // declare fields to use in the class
         public int x, y, width, height;//variables for the rectangle
-        public Image mario;//variable for Mario's image
+        public Image mario1;//variable for Mario's image
         public Rectangle marioRec;//variable for a rectangle to place our image in
 
         //Create a constructor (initialises the values of the fields)
@@ -21,14 +21,14 @@ namespace space_jump
             y = 360;
             width = 40;
             height = 60;
-            mario = Properties.Resources.Mario1;
+            mario1 = Properties.Resources.Mario1;
             marioRec = new Rectangle(x, y, width, height);
         }
         //methods
         public void DrawMario(Graphics g)
         {
 
-            g.DrawImage(mario, marioRec);
+            g.DrawImage(mario1, marioRec);
         }
         public void MoveMario(string move)
         {
@@ -95,7 +95,6 @@ namespace space_jump
                 }
 
             }
-
 
         }
 
