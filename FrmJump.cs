@@ -19,7 +19,7 @@ namespace space_jump
         Asteroid[] asteroids = new Asteroid[12];
         Random xspeed = new Random();
         Mario mario = new Mario();
-        bool left, right, up, down;
+        bool left, right, up, down, jump;
         string move;
         int score, lives;
 
@@ -41,6 +41,7 @@ namespace space_jump
             if (e.KeyData == Keys.Right) { right = true; }
             if (e.KeyData == Keys.Up) { up = true; }
             if (e.KeyData == Keys.Down) { down = true; }
+            if (e.KeyData == Keys.Space) {jump = true ; }
         }
 
         private void FrmJump_KeyUp(object sender, KeyEventArgs e)
@@ -49,7 +50,7 @@ namespace space_jump
             if (e.KeyData == Keys.Right) { right = false; }
             if (e.KeyData == Keys.Up) { up = false; }
             if (e.KeyData == Keys.Down) { down = false; }
-
+            if (e.KeyData == Keys.Space) { jump = false; }
         }
         
         private void TmrMario_Tick(object sender, EventArgs e)
