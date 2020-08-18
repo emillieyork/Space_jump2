@@ -19,8 +19,8 @@ namespace space_jump
         {
             x = 900;
             y = 360;
-            width = 80;
-            height = 100;
+            width = 40;
+            height = 60;
             mario = Properties.Resources.Mario1;
             marioRec = new Rectangle(x, y, width, height);
         }

@@ -193,5 +193,58 @@ namespace space_jump
             }
         }
 
+        private void CheckScore ()
+        {
+            if (score > 30)
+            {
+                TmrStroid.Interval = 30;
+                TmrMario.Interval = 39;
+            }
+            if (score > 60)
+            {
+                TmrStroid.Interval = 27;
+                TmrMario.Interval = 39;
+            }
+            if (score > 90)
+            {
+                TmrStroid.Interval = 24;
+                TmrMario.Interval = 39;
+            }
+            if (score > 120)
+            {
+                TmrStroid.Interval = 21;
+                TmrMario.Interval = 39;
+            }
+            if (score > 150)
+            {
+                TmrStroid.Interval = 18;
+                TmrMario.Interval = 39;
+            }
+            if (score > 180)
+            {
+                TmrStroid.Interval = 15;
+                TmrMario.Interval = 39;
+            }
+            if (score > 210)
+            {
+                TmrStroid.Interval = 12;
+                TmrMario.Interval = 39;
+            }
+            if (score > 240)
+            {
+                TmrStroid.Interval = 9;
+                TmrMario.Interval = 39;
+            }
+            if (score > 270)
+            {
+                TmrStroid.Interval = 6;
+                TmrMario.Interval = 39;
+            }
+            if (score > 300)
+            {
+                TmrStroid.Interval = 3;
+                TmrMario.Interval = 39;
+            }
+        }
     }
 }
