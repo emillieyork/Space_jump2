@@ -26,7 +26,7 @@ namespace space_jump
         public FrmJump()
         {
             InitializeComponent();
-            for (int i = 0; i < 6; i++)
+            for (int i = 0; i < 11; i++)
             {
                 int y = 10 + (i * 75);
                 asteroids[i] = new Asteroid(y);
@@ -89,7 +89,7 @@ namespace space_jump
         private void TmrStroid_Tick_1(object sender, EventArgs e)
         {
             // score = 0;
-            for (int i = 0; i < 6; i++)
+            for (int i = 0; i < 11; i++)
             {
                 asteroids[i].MoveAsteroid();
 
@@ -122,7 +122,7 @@ namespace space_jump
             //get the graphics used to paint on the panel control
             g = e.Graphics;
             //call the Asteroid class's DrawAsteroid method to draw the image asreroid
-            for (int i = 0; i < 6; i++)
+            for (int i = 0; i < 11; i++)
             {
                 // generate a random number from 5 to 20 and put it in rndmspeed
                 int rndmspeed = xspeed.Next(5, 20);
