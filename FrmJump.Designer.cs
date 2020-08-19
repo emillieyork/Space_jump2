@@ -166,7 +166,7 @@
             // Tmrstar
             // 
             this.Tmrstar.Enabled = true;
-            this.Tmrstar.Tick += new System.EventHandler(this.Tmrstar_Tick);
+            this.Tmrstar.Tick += new System.EventHandler(this.TmrStar_Tick);
             // 
             // FrmJump
             // 

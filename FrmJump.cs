@@ -19,6 +19,7 @@ namespace space_jump
         Asteroid[] asteroids = new Asteroid[12];
         Random xspeed = new Random();
         Mario mario1 = new Mario();
+        Star star;
         bool left, right, up, down, jump;
         string move;
         int score, lives;
@@ -163,7 +164,7 @@ namespace space_jump
 
             }
             mario1.DrawMario(g);
-
+            
         }
 
         private void TmrMario_Tick_1(object sender, EventArgs e)
@@ -194,6 +195,11 @@ namespace space_jump
         private void Tmrstar_Tick(object sender, EventArgs e)
         {
 
+        }
+
+        private void TmrStar_Tick(object sender, EventArgs e)
+        {
+            
         }
 
         private void MnuStart_Click(object sender, EventArgs e)
