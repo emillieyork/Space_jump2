@@ -51,6 +51,7 @@
             // TmrMario
             // 
             this.TmrMario.Enabled = true;
+            this.TmrMario.Interval = 1;
             this.TmrMario.Tick += new System.EventHandler(this.TmrMario_Tick_1);
             // 
             // TmrStroid
@@ -131,6 +132,7 @@
             this.TxtName.Name = "TxtName";
             this.TxtName.Size = new System.Drawing.Size(100, 20);
             this.TxtName.TabIndex = 1;
+            this.TxtName.TextChanged += new System.EventHandler(this.TxtName_TextChanged);
             // 
             // lblScore
             // 
@@ -180,6 +182,7 @@
             this.Name = "FrmJump";
             this.Text = "FrmJump";
             this.Load += new System.EventHandler(this.FrmJump_Load);
+            this.TextChanged += new System.EventHandler(this.FrmJump_TextChanged_1);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmJump_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FrmJump_KeyUp);
             this.menuStrip1.ResumeLayout(false);
