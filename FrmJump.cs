@@ -9,6 +9,7 @@ using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Reflection;
 
 namespace space_jump
 {
@@ -27,6 +28,7 @@ namespace space_jump
         public FrmJump()
         {
             InitializeComponent();
+            typeof(Panel).InvokeMember("DoubleBuffered", BindingFlags.SetProperty | BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic, null, PnlGame, new object[] { true });
             for (int i = 0; i < 11; i++)
             {
                 int y = 10 + (i * 75);
@@ -164,7 +166,7 @@ namespace space_jump
 
             }
             mario1.DrawMario(g);
-            
+            star.DrawStar(g);
         }
 
         private void TmrMario_Tick_1(object sender, EventArgs e)
