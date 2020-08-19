@@ -21,7 +21,7 @@ namespace space_jump
         Random xspeed = new Random();
         Mario mario1 = new Mario();
         Star star;
-        bool left, right, up, down, jump;
+        bool Left, Right, Up, Down, jump;
         string move;
         int score, lives;
 
@@ -39,19 +39,19 @@ namespace space_jump
 
         private void FrmJump_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyData == Keys.Left) { left = true; }
-            if (e.KeyData == Keys.Right) { right = true; }
-            if (e.KeyData == Keys.Up) { up = true; }
-            if (e.KeyData == Keys.Down) { down = true; }
+            if (e.KeyData == Keys.Left) { Left = true; }
+            if (e.KeyData == Keys.Right) { Right = true; }
+            if (e.KeyData == Keys.Up) { Up = true; }
+            if (e.KeyData == Keys.Down) { Down = true; }
             if (e.KeyData == Keys.Space) {jump = true ; }
         }
 
         private void FrmJump_KeyUp(object sender, KeyEventArgs e)
         {
-            if (e.KeyData == Keys.Left) { left = false; }
-            if (e.KeyData == Keys.Right) { right = false; }
-            if (e.KeyData == Keys.Up) { up = false; }
-            if (e.KeyData == Keys.Down) { down = false; }
+            if (e.KeyData == Keys.Left) { Left = false; }
+            if (e.KeyData == Keys.Right) { Right = false; }
+            if (e.KeyData == Keys.Up) { Up = false; }
+            if (e.KeyData == Keys.Down) { Down = false; }
             if (e.KeyData == Keys.Space) { jump = false; }
         }
         
@@ -67,6 +67,32 @@ namespace space_jump
             TxtName.Focus();
             TmrMario.Enabled = false;
             TmrStroid.Enabled = false;
+        }
+
+        private void FrmLadybug_TextChanged(object sender, EventArgs e)
+        {
+            string context = TxtName.Text;
+            bool isletter = true;
+            //for loop checks for letters as characters are entered 
+            for (int i = 0; i < context.Length; i++)
+            {
+                if (!char.IsLetter(context[i]))//if current character not a letter
+                {
+                    isletter = false;//make isletter false
+                    break; // exit the for loop
+                }
+            }
+            //if not a letter clear the textbox and focus on it
+            // to enter name again
+            if (isletter == false)
+            {
+                TxtName.Clear();
+                TxtName.Focus();
+            }
+            else
+            {
+                MnuStart.Enabled = true;
+            }
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -118,7 +144,7 @@ namespace space_jump
             }
 
             PnlGame.Invalidate();//makes the paint event fire to redraw the panel
-            if (up) //if up key pressed 
+            if (Up) //if up key pressed 
             {
                 if (mario1.y < 10)
                     //check to see if mario within 10 of up side
@@ -133,7 +159,7 @@ namespace space_jump
                         //else move 5 up
                     }
             }
-            if (down) //if down key pressed 
+            if (Down) //if down key pressed 
             {
                 if (mario1.y < 10)
                     //check to see if mario within 10 of up side
@@ -166,27 +192,26 @@ namespace space_jump
 
             }
             mario1.DrawMario(g);
-            star.DrawStar(g);
         }
 
         private void TmrMario_Tick_1(object sender, EventArgs e)
         {
-            if (right) // if right arrow key pressed
+            if (Right) // if right arrow key pressed
             {
                 move = "right";
                 mario1.MoveMario(move);
             }
-            if (left) // if left arrow key pressed
+            if (Left) // if left arrow key pressed
             {
                 move = "left";
                 mario1.MoveMario(move);
             }
-            if (down) // if down arrow key pressed
+            if (Down) // if down arrow key pressed
             {
                 move = "down";
                 mario1.MoveMario(move);
             }
-            if (up) // if up arrow key pressed
+            if (Up) // if up arrow key pressed
             {
                 move = "up";
                 mario1.MoveMario(move);
