@@ -39,6 +39,7 @@ namespace space_jump
                 if (marioRec.Location.X > 10) // is mario within 50 of right side
                 {
 
+
                     x += 5;
                     marioRec.Location = new Point(x, y);
                 }
