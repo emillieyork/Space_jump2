@@ -163,12 +163,11 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Space Jump!";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // Tmrstar
             // 
             this.Tmrstar.Enabled = true;
-            this.Tmrstar.Tick += new System.EventHandler(this.TmrStar_Tick);
+            this.Tmrstar.Tick += new System.EventHandler(this.Tmrstar_Tick);
             // 
             // FrmJump
             // 
@@ -182,7 +181,6 @@
             this.Name = "FrmJump";
             this.Text = "FrmJump";
             this.Load += new System.EventHandler(this.FrmJump_Load);
-            this.TextChanged += new System.EventHandler(this.FrmJump_TextChanged_1);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmJump_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FrmJump_KeyUp);
             this.menuStrip1.ResumeLayout(false);

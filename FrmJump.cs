@@ -20,7 +20,7 @@ namespace space_jump
         Asteroid[] asteroids = new Asteroid[12];
         Random xspeed = new Random();
         Mario mario1 = new Mario();
-        Star star;
+        Star star ;
         bool left, right, Up, Down, jump;
         string move;
         int score, lives;
@@ -69,15 +69,7 @@ namespace space_jump
             TmrStroid.Enabled = false;
         }
 
-        private void FrmJump_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
+      
 
         private void MnuStart_Click_1(object sender, EventArgs e)
         {
@@ -157,6 +149,17 @@ namespace space_jump
             }
         }
 
+        private void Tmrstar_Tick(object sender, EventArgs e)
+        {
+            if (star.starRec.IntersectsWith(mario1.marioRec))
+            {
+                //make star disapear
+                score += 1;// gain a life
+                lblScore.Text = score.ToString();// display number of lives
+                CheckScore();
+            }
+        }
+
         private void PnlGame_Paint(object sender, PaintEventArgs e)
         {
             //get the graphics used to paint on the panel control
@@ -173,6 +176,7 @@ namespace space_jump
 
             }
             mario1.DrawMario(g);
+            star.DrawStar(g);
         }
 
         private void TmrMario_Tick_1(object sender, EventArgs e)
@@ -200,41 +204,7 @@ namespace space_jump
             Invalidate();
         }
 
-        private void Tmrstar_Tick(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TmrStar_Tick(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void FrmJump_TextChanged_1(object sender, EventArgs e)
-        {
-            string context = TxtName.Text;
-            bool isletter = true;
-            //for loop checks for letters as characters are entered 
-            for (int i = 0; i < context.Length; i++)
-            {
-                if (!char.IsLetter(context[i]))//if current character not a letter
-                {
-                    isletter = false;//make isletter false
-                    break; // exit the for loop
-                }
-            }
-            //if not a letter clear the textbox and focus on it
-            // to enter name again
-            if (isletter == false)
-            {
-                TxtName.Clear();
-                TxtName.Focus();
-            }
-            else
-            {
-                MnuStart.Enabled = true;
-            }
-        }
+       
 
         private void TxtName_TextChanged(object sender, EventArgs e)
         {
@@ -261,23 +231,6 @@ namespace space_jump
             {
                 MnuStart.Enabled = true;
             }
-        }
-
-        private void MnuStart_Click(object sender, EventArgs e)
-        {
-            
-
-        }
-
-        private void MnuStop_Click(object sender, EventArgs e)
-        {
-          
-
-        }
-
-        private void TmrStroid_Tick(object sender, EventArgs e)
-        {
-        
         }
         private void CheckLives()
         {
