@@ -15,13 +15,15 @@ namespace space_jump
 {
     public partial class FrmJump : Form
     {
+        string[] valid_number = { "5", "6", "7", "8","9","10" };
+        int number;
         Graphics g; //declare a graphics object called g
         // declare space for an array of 7 objects called asteroid 
         Asteroid[] asteroids = new Asteroid[12];
         Random xspeed = new Random();
         Mario mario1 = new Mario();
-        Star star ;
-        bool left, right, Up, Down, jump;
+        Star star;
+       private bool left, right, Up, Down, jump;
         string move;
         int score, lives;
 
@@ -55,11 +57,6 @@ namespace space_jump
             if (e.KeyData == Keys.Space) { jump = false; }
         }
         
-        private void TmrMario_Tick(object sender, EventArgs e)
-        {
-           
-        }
-
         private void FrmJump_Load(object sender, EventArgs e)
         {
            
@@ -68,8 +65,6 @@ namespace space_jump
             TmrMario.Enabled = false;
             TmrStroid.Enabled = false;
         }
-
-      
 
         private void MnuStart_Click_1(object sender, EventArgs e)
         {
@@ -151,12 +146,23 @@ namespace space_jump
 
         private void Tmrstar_Tick(object sender, EventArgs e)
         {
-            if (star.starRec.IntersectsWith(mario1.marioRec))
+       
+        }
+
+        private void TxtLives_TextChanged(object sender, EventArgs e)
+        {
+            if (!valid_number.Contains(TxtLives.Text))
             {
-                //make star disapear
-                score += 1;// gain a life
-                lblScore.Text = score.ToString();// display number of lives
-                CheckScore();
+                MessageBox.Show("Please enter a number from 5 to 10 only", "Error");
+                TxtLives.Clear();//clear the textbox
+                TxtLives.Focus();//cursor back in textbox
+            }
+            else
+            {
+                //convert string in textbox to a number
+                number = int.Parse(TxtLives.Text);
+                //Display number in second textbox
+                TxtLives.Text = number.ToString();
             }
         }
 
@@ -176,7 +182,7 @@ namespace space_jump
 
             }
             mario1.DrawMario(g);
-            star.DrawStar(g);
+           
         }
 
         private void TmrMario_Tick_1(object sender, EventArgs e)
@@ -203,8 +209,6 @@ namespace space_jump
             }
             Invalidate();
         }
-
-       
 
         private void TxtName_TextChanged(object sender, EventArgs e)
         {

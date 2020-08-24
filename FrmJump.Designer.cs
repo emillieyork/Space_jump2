@@ -107,6 +107,7 @@
             this.TxtLives.Size = new System.Drawing.Size(100, 20);
             this.TxtLives.TabIndex = 2;
             this.TxtLives.Text = "5";
+            this.TxtLives.TextChanged += new System.EventHandler(this.TxtLives_TextChanged);
             // 
             // label2
             // 

@@ -15,6 +15,7 @@ namespace space_jump
         Random xspeed = new Random();
         public Rectangle asteroidRec;//variable for a rectangle to place our image in
         //Create a constructor (initialises the values of the fields)
+        public Image starImage;
         public Asteroid(int spacing)
         {
             y =spacing;
@@ -30,6 +31,7 @@ namespace space_jump
         {
             asteroidRec = new Rectangle(x, y, width, height);
             g.DrawImage(asteroidImage, asteroidRec);
+            
         }
         public void MoveAsteroid()
         {
