@@ -22,7 +22,8 @@ namespace space_jump
         Asteroid[] asteroids = new Asteroid[12];
         Random xspeed = new Random();
         Mario mario1 = new Mario();
-        Star star1 = new Star();
+        Star Star = new Star();
+        Heart Heart = new Heart();
        private bool left, right, Up, Down;
         string move;
         int score, lives;
@@ -103,6 +104,7 @@ namespace space_jump
                     score += 1;//update the score
                     lblScore.Text = score.ToString();// display score
                     asteroids[i].x = 15;
+                    CheckScore();
 
                 }
                 // score += asteroid[i].score;// get score from asteroid class (in moveAsteroid method)
@@ -145,7 +147,8 @@ namespace space_jump
 
         private void Tmrstar_Tick(object sender, EventArgs e)
         {
-       
+            Star.DrawStar(g);
+            TmrStar.Enabled = false;
         }
 
         private void TxtLives_TextChanged(object sender, EventArgs e)
@@ -184,6 +187,12 @@ namespace space_jump
            
         }
 
+        private void TmrHeart_Tick(object sender, EventArgs e)
+        {
+            Heart.DrawHeart(g);
+            TmrHeart.Enabled = false;
+        }
+
         private void TmrMario_Tick_1(object sender, EventArgs e)
         {
             if (right) // if right arrow key pressed
@@ -205,6 +214,11 @@ namespace space_jump
             {
                 move = "Up";
                 mario1.MoveMario(move);
+            }
+
+        if (score == 20)
+            {
+                TmrHeart.Enabled = true;
             }
             Invalidate();
         }
@@ -247,7 +261,7 @@ namespace space_jump
             }
         }
 
-        private void Checkscore()
+        private void CheckScore()
         {
             if (score > 30)
             {

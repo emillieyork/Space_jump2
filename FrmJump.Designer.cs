@@ -43,7 +43,8 @@
             this.lblScore = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.Tmrstar = new System.Windows.Forms.Timer(this.components);
+            this.TmrStar = new System.Windows.Forms.Timer(this.components);
+            this.TmrHeart = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1.SuspendLayout();
             this.PnlGame.SuspendLayout();
             this.SuspendLayout();
@@ -165,10 +166,15 @@
             this.label1.Text = "Space Jump!";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Tmrstar
+            // TmrStar
             // 
-            this.Tmrstar.Enabled = true;
-            this.Tmrstar.Tick += new System.EventHandler(this.Tmrstar_Tick);
+            this.TmrStar.Enabled = true;
+            this.TmrStar.Tick += new System.EventHandler(this.Tmrstar_Tick);
+            // 
+            // TmrHeart
+            // 
+            this.TmrHeart.Enabled = true;
+            this.TmrHeart.Tick += new System.EventHandler(this.TmrHeart_Tick);
             // 
             // FrmJump
             // 
@@ -208,7 +214,8 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem MnuStart;
         private System.Windows.Forms.ToolStripMenuItem MnuStop;
-        private System.Windows.Forms.Timer Tmrstar;
+        private System.Windows.Forms.Timer TmrStar;
+        private System.Windows.Forms.Timer TmrHeart;
     }
 }
 

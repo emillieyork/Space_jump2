@@ -16,7 +16,7 @@ namespace space_jump
         public Rectangle heartRec;//variable for a rectangle to place 
         //create a constructor (initialises the value of the feilds)
 
-        public Heart (int spacing)
+        public Heart ()
         {
             x = 384;
             y = 320;
