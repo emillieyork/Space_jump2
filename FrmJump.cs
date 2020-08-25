@@ -15,15 +15,14 @@ namespace space_jump
 {
     public partial class FrmJump : Form
     {
-        string[] valid_number = { "5", "6", "7", "8","9","10" };
+        string[] valid_number = {"0", "1", "2", "3", "4", "5", "6", "7", "8","9","10" };
         int number;
         Graphics g; //declare a graphics object called g
         // declare space for an array of 7 objects called asteroid 
         Asteroid[] asteroids = new Asteroid[12];
         Random xspeed = new Random();
         Mario mario1 = new Mario();
-        Star star;
-       private bool left, right, Up, Down, jump;
+       private bool left, right, Up, Down;
         string move;
         int score, lives;
 
@@ -45,7 +44,6 @@ namespace space_jump
             if (e.KeyData == Keys.Right) { right = true; }
             if (e.KeyData == Keys.Up) { Up = true; }
             if (e.KeyData == Keys.Down) { Down = true; }
-            if (e.KeyData == Keys.Space) {jump = true ; }
         }
 
         private void FrmJump_KeyUp(object sender, KeyEventArgs e)
@@ -54,7 +52,7 @@ namespace space_jump
             if (e.KeyData == Keys.Right) { right = false; }
             if (e.KeyData == Keys.Up) { Up = false; }
             if (e.KeyData == Keys.Down) { Down = false; }
-            if (e.KeyData == Keys.Space) { jump = false; }
+        
         }
         
         private void FrmJump_Load(object sender, EventArgs e)
@@ -251,54 +249,55 @@ namespace space_jump
         {
             if (score > 30)
             {
-                TmrStroid.Interval = 30;
+                TmrStroid.Interval = 20;
                 TmrMario.Interval = 39;
             }
             if (score > 60)
             {
-                TmrStroid.Interval = 27;
+                TmrStroid.Interval = 18;
                 TmrMario.Interval = 39;
             }
             if (score > 90)
             {
-                TmrStroid.Interval = 24;
+                TmrStroid.Interval = 16;
                 TmrMario.Interval = 39;
             }
             if (score > 120)
             {
-                TmrStroid.Interval = 21;
+                TmrStroid.Interval = 14;
                 TmrMario.Interval = 39;
             }
             if (score > 150)
             {
-                TmrStroid.Interval = 18;
+                TmrStroid.Interval = 12;
                 TmrMario.Interval = 39;
             }
             if (score > 180)
             {
-                TmrStroid.Interval = 15;
+                TmrStroid.Interval = 10;
                 TmrMario.Interval = 39;
             }
             if (score > 210)
             {
-                TmrStroid.Interval = 12;
+                TmrStroid.Interval = 8;
                 TmrMario.Interval = 39;
             }
             if (score > 240)
             {
-                TmrStroid.Interval = 9;
+                TmrStroid.Interval = 6;
                 TmrMario.Interval = 39;
             }
             if (score > 270)
             {
-                TmrStroid.Interval = 6;
+                TmrStroid.Interval = 4;
                 TmrMario.Interval = 39;
             }
             if (score > 300)
             {
-                TmrStroid.Interval = 3;
+                TmrStroid.Interval = 2;
                 TmrMario.Interval = 39;
             }
         }
+
     }
 }
