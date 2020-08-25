@@ -263,52 +263,52 @@ namespace space_jump
 
         private void CheckScore()
         {
-            if (score > 30)
+            if (score > 20)
             {
                 TmrStroid.Interval = 20;
                 TmrMario.Interval = 39;
             }
-            if (score > 60)
+            if (score > 40)
             {
                 TmrStroid.Interval = 18;
                 TmrMario.Interval = 39;
             }
-            if (score > 90)
+            if (score > 60)
             {
                 TmrStroid.Interval = 16;
                 TmrMario.Interval = 39;
             }
-            if (score > 120)
+            if (score > 80)
             {
                 TmrStroid.Interval = 14;
                 TmrMario.Interval = 39;
             }
-            if (score > 150)
+            if (score > 100)
             {
                 TmrStroid.Interval = 12;
                 TmrMario.Interval = 39;
             }
-            if (score > 180)
+            if (score > 120)
             {
                 TmrStroid.Interval = 10;
                 TmrMario.Interval = 39;
             }
-            if (score > 210)
+            if (score > 140)
             {
                 TmrStroid.Interval = 8;
                 TmrMario.Interval = 39;
             }
-            if (score > 240)
+            if (score > 160)
             {
                 TmrStroid.Interval = 6;
                 TmrMario.Interval = 39;
             }
-            if (score > 270)
+            if (score > 180)
             {
                 TmrStroid.Interval = 4;
                 TmrMario.Interval = 39;
             }
-            if (score > 300)
+            if (score > 200)
             {
                 TmrStroid.Interval = 2;
                 TmrMario.Interval = 39;
