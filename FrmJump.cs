@@ -22,6 +22,7 @@ namespace space_jump
         Asteroid[] asteroids = new Asteroid[12];
         Random xspeed = new Random();
         Mario mario1 = new Mario();
+        Star star1 = new Star();
        private bool left, right, Up, Down;
         string move;
         int score, lives;
@@ -234,6 +235,7 @@ namespace space_jump
                 MnuStart.Enabled = true;
             }
         }
+
         private void CheckLives()
         {
             if (lives == 0)
@@ -245,7 +247,7 @@ namespace space_jump
             }
         }
 
-        private void CheckScore ()
+        private void Checkscore()
         {
             if (score > 30)
             {

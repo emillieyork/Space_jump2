@@ -9,5 +9,6 @@ namespace space_jump
 {
     class Star
     {
+
     }
 }
