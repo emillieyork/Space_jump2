@@ -169,7 +169,8 @@
             // TmrStar
             // 
             this.TmrStar.Enabled = true;
-            this.TmrStar.Tick += new System.EventHandler(this.Tmrstar_Tick);
+            this.TmrStar.Interval = 10;
+            this.TmrStar.Tick += new System.EventHandler(this.TmrStar_Tick);
             // 
             // TmrHeart
             // 

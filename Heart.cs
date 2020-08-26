@@ -31,8 +31,7 @@ namespace space_jump
 
         public void DrawHeart(Graphics g)
         {
-            heartRec = new Rectangle(x, y, width, height);
-            g.DrawImage(Heart1, heartRec);
+           
 
         }
     }

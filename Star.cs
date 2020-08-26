@@ -30,8 +30,7 @@ namespace space_jump
 
         public void DrawStar(Graphics g)
         {
-            starRec = new Rectangle(x, y, width, height);
-            g.DrawImage(Star1, starRec);
+           
 
         }
     }

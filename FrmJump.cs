@@ -27,6 +27,9 @@ namespace space_jump
        private bool left, right, Up, Down;
         string move;
         int score, lives;
+        Rectangle starRec = new Rectangle(0, 0, 30, 35);
+        Image star = Properties.Resources.Star1;
+        Random rand = new Random();
 
         public FrmJump()
         {
@@ -75,12 +78,14 @@ namespace space_jump
             TmrMario.Enabled = true;
             TxtName.Enabled = false;
             TxtLives.Enabled = false;
+            TmrStar.Start(); //start the timer
         }
 
         private void MnuStop_Click_1(object sender, EventArgs e)
         {
             TmrMario.Enabled = false;
             TmrStroid.Enabled = false;
+            TmrStar.Enabled = false;
         }
 
         private void TmrStroid_Tick_1(object sender, EventArgs e)
@@ -145,10 +150,15 @@ namespace space_jump
             }
         }
 
-        private void Tmrstar_Tick(object sender, EventArgs e)
+        private void TmrStar_Tick(object sender, EventArgs e)
         {
-            Star.DrawStar(g);
-            TmrStar.Enabled = false;
+            PnlGame.Invalidate();
+            if (mario1.marioRec.IntersectsWith(star.starRec))
+            {
+                score += 5;// gain 5 points 
+                lblScore.Text = lives.ToString();// display number of score
+                CheckScore();
+            }
         }
 
         private void TxtLives_TextChanged(object sender, EventArgs e)
@@ -184,13 +194,21 @@ namespace space_jump
 
             }
             mario1.DrawMario(g);
+            g = e.Graphics;// sets g to the Graphics object supplied in the PaintEventArgs
+            //set the x and y positions of alienRec
+            starRec.X = rand.Next(800);
+            starRec.Y = rand.Next(800);
+            //draw the star image randomly on the panel 
+            
            
+
+            g.DrawImage(star, starRec);
+
         }
 
         private void TmrHeart_Tick(object sender, EventArgs e)
         {
-            Heart.DrawHeart(g);
-            TmrHeart.Enabled = false;
+            
         }
 
         private void TmrMario_Tick_1(object sender, EventArgs e)
@@ -265,7 +283,7 @@ namespace space_jump
         {
             if (score > 20)
             {
-                TmrStroid.Interval = 20;
+                TmrStroid.Interval = 10;
                 TmrMario.Interval = 39;
             }
             if (score > 40)
