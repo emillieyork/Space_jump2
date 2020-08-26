@@ -30,6 +30,8 @@ namespace space_jump
         Rectangle starRec = new Rectangle(0, 0, 30, 35);
         Image star = Properties.Resources.Star1;
         Random rand = new Random();
+        Rectangle heartRec = new Rectangle(0, 0, 30, 32);
+        Image heart = Properties.Resources.Heart1;
 
         public FrmJump()
         {
@@ -49,6 +51,18 @@ namespace space_jump
             if (e.KeyData == Keys.Right) { right = true; }
             if (e.KeyData == Keys.Up) { Up = true; }
             if (e.KeyData == Keys.Down) { Down = true; }
+            if (starRec.IntersectsWith(mario1.marioRec)) 
+            {
+                score += 5;//add 5 to the score
+                lblScore.Text = score.ToString();// display the score
+            }
+            if (heartRec.IntersectsWith(mario1.marioRec))
+            {
+                lives += 3;//add 3 to lives 
+                TxtLives.Text = lives.ToString();// display number of lives
+                CheckLives();
+            }
+
         }
 
         private void FrmJump_KeyUp(object sender, KeyEventArgs e)
@@ -79,6 +93,7 @@ namespace space_jump
             TxtName.Enabled = false;
             TxtLives.Enabled = false;
             TmrStar.Start(); //start the timer
+            TmrStar.Interval = 10000;
         }
 
         private void MnuStop_Click_1(object sender, EventArgs e)
@@ -152,13 +167,7 @@ namespace space_jump
 
         private void TmrStar_Tick(object sender, EventArgs e)
         {
-            PnlGame.Invalidate();
-            if (mario1.marioRec.IntersectsWith(star.starRec))
-            {
-                score += 5;// gain 5 points 
-                lblScore.Text = lives.ToString();// display number of score
-                CheckScore();
-            }
+            TmrStar.Interval = 10000;
         }
 
         private void TxtLives_TextChanged(object sender, EventArgs e)
@@ -199,11 +208,15 @@ namespace space_jump
             starRec.X = rand.Next(800);
             starRec.Y = rand.Next(800);
             //draw the star image randomly on the panel 
-            
-           
+
+            g = e.Graphics;// sets g to the Graphics object supplied in the PaintEventArgs
+            //set the x and y positions of alienRec
+            heartRec.X = rand.Next(800);
+            heartRec.Y = rand.Next(800);
+            //draw the star image randomly on the panel 
 
             g.DrawImage(star, starRec);
-
+            g.DrawImage(heart, heartRec);
         }
 
         private void TmrHeart_Tick(object sender, EventArgs e)
