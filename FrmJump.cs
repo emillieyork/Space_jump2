@@ -15,7 +15,7 @@ namespace space_jump
 {
     public partial class FrmJump : Form
     {
-        string[] valid_number = {"0", "1", "2", "3", "4", "5", "6", "7", "8","9","10" };
+        string[] valid_number = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" };
         int number;
         Graphics g; //declare a graphics object called g
         // declare space for an array of 7 objects called asteroid 
@@ -24,14 +24,15 @@ namespace space_jump
         Mario mario1 = new Mario();
         Star Star = new Star();
         Heart Heart = new Heart();
-       private bool left, right, Up, Down;
+       private bool left, right, Up, Down, jumping;
         string move;
         int score, lives;
-        Rectangle starRec = new Rectangle(0, 0, 30, 35);
+        Rectangle starRec = new Rectangle(0, 0, 15, 17);
         Image star = Properties.Resources.Star1;
         Random rand = new Random();
-        Rectangle heartRec = new Rectangle(0, 0, 30, 32);
+        Rectangle heartRec = new Rectangle(0, 0, 16, 16);
         Image heart = Properties.Resources.Heart1;
+        int gravity = 5;
 
         public FrmJump()
         {
@@ -51,14 +52,24 @@ namespace space_jump
             if (e.KeyData == Keys.Right) { right = true; }
             if (e.KeyData == Keys.Up) { Up = true; }
             if (e.KeyData == Keys.Down) { Down = true; }
+            if (e.KeyData == Keys.Space)  {  jumping = true; gravity = -5;}
             if (starRec.IntersectsWith(mario1.marioRec)) 
             {
+                TmrStar.Enabled = true;
+                starRec.X = rand.Next(800);
+                starRec.Y = rand.Next(800);
+                TmrStar.Enabled = false;
                 score += 5;//add 5 to the score
                 lblScore.Text = score.ToString();// display the score
+                CheckScore();
             }
             if (heartRec.IntersectsWith(mario1.marioRec))
             {
-                lives += 3;//add 3 to lives 
+                TmrHeart.Enabled = true;
+                heartRec.X = rand.Next(800);
+                heartRec.Y = rand.Next(800);
+                TmrHeart.Enabled = false;
+                lives += 1;//add 1 to lives 
                 TxtLives.Text = lives.ToString();// display number of lives
                 CheckLives();
             }
@@ -71,9 +82,9 @@ namespace space_jump
             if (e.KeyData == Keys.Right) { right = false; }
             if (e.KeyData == Keys.Up) { Up = false; }
             if (e.KeyData == Keys.Down) { Down = false; }
-        
+            if (e.KeyData == Keys.Space) {jumping = false; gravity = 5;}
         }
-        
+
         private void FrmJump_Load(object sender, EventArgs e)
         {
            
@@ -92,8 +103,8 @@ namespace space_jump
             TmrMario.Enabled = true;
             TxtName.Enabled = false;
             TxtLives.Enabled = false;
-            TmrStar.Start(); //start the timer
-            TmrStar.Interval = 10000;
+            TmrStar.Enabled = false;
+            TmrHeart.Enabled = false;
         }
 
         private void MnuStop_Click_1(object sender, EventArgs e)
@@ -167,7 +178,7 @@ namespace space_jump
 
         private void TmrStar_Tick(object sender, EventArgs e)
         {
-            TmrStar.Interval = 10000;
+            
         }
 
         private void TxtLives_TextChanged(object sender, EventArgs e)
@@ -203,17 +214,8 @@ namespace space_jump
 
             }
             mario1.DrawMario(g);
-            g = e.Graphics;// sets g to the Graphics object supplied in the PaintEventArgs
-            //set the x and y positions of alienRec
-            starRec.X = rand.Next(800);
-            starRec.Y = rand.Next(800);
-            //draw the star image randomly on the panel 
-
-            g = e.Graphics;// sets g to the Graphics object supplied in the PaintEventArgs
-            //set the x and y positions of alienRec
-            heartRec.X = rand.Next(800);
-            heartRec.Y = rand.Next(800);
-            //draw the star image randomly on the panel 
+           
+         
 
             g.DrawImage(star, starRec);
             g.DrawImage(heart, heartRec);
@@ -221,7 +223,7 @@ namespace space_jump
 
         private void TmrHeart_Tick(object sender, EventArgs e)
         {
-            
+      
         }
 
         private void TmrMario_Tick_1(object sender, EventArgs e)
@@ -247,10 +249,6 @@ namespace space_jump
                 mario1.MoveMario(move);
             }
 
-        if (score == 20)
-            {
-                TmrHeart.Enabled = true;
-            }
             Invalidate();
         }
 

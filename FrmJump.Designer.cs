@@ -169,12 +169,13 @@
             // TmrStar
             // 
             this.TmrStar.Enabled = true;
-            this.TmrStar.Interval = 10;
+            this.TmrStar.Interval = 1000;
             this.TmrStar.Tick += new System.EventHandler(this.TmrStar_Tick);
             // 
             // TmrHeart
             // 
             this.TmrHeart.Enabled = true;
+            this.TmrHeart.Interval = 1000;
             this.TmrHeart.Tick += new System.EventHandler(this.TmrHeart_Tick);
             // 
             // FrmJump

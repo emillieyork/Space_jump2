@@ -82,7 +82,6 @@ namespace space_jump
                         y -= 5;
                         marioRec.Location = new Point(x, y);
                     }
-
                 }
 
             }
