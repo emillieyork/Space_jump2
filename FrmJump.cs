@@ -128,7 +128,7 @@ namespace space_jump
                     asteroids[i].x = 15; // set  y value of asteroidRec
                     score -= 3;
                     lblScore.Text = score.ToString();// display the score
-                    if (score > 10)
+                    if (score < 10)
                     {
                         lives -= 1;// lose a life
                         TxtLives.Text = lives.ToString();// display number of lives
