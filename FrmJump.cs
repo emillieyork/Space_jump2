@@ -126,9 +126,15 @@ namespace space_jump
                 {
                     //reset planet[i] back to side of panel
                     asteroids[i].x = 15; // set  y value of asteroidRec
-                    lives -= 1;// lose a life
-                    TxtLives.Text = lives.ToString();// display number of lives
-                    CheckLives();
+                    score -= 3;
+                    lblScore.Text = score.ToString();// display the score
+                    if (score > 10)
+                    {
+                        lives -= 1;// lose a life
+                        TxtLives.Text = lives.ToString();// display number of lives
+                        CheckLives();
+                    }
+                   
                 }
                 //if a asteroid reaches the edge of the Game Area reposition it at the left
                 if (asteroids[i].x >= PnlGame.Height)
