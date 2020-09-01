@@ -97,13 +97,13 @@
             this.PnlGame.Controls.Add(this.label1);
             this.PnlGame.Location = new System.Drawing.Point(0, 27);
             this.PnlGame.Name = "PnlGame";
-            this.PnlGame.Size = new System.Drawing.Size(1051, 808);
+            this.PnlGame.Size = new System.Drawing.Size(1000, 800);
             this.PnlGame.TabIndex = 0;
             this.PnlGame.Paint += new System.Windows.Forms.PaintEventHandler(this.PnlGame_Paint);
             // 
             // TxtLives
             // 
-            this.TxtLives.Location = new System.Drawing.Point(939, 288);
+            this.TxtLives.Location = new System.Drawing.Point(888, 277);
             this.TxtLives.Name = "TxtLives";
             this.TxtLives.Size = new System.Drawing.Size(100, 20);
             this.TxtLives.TabIndex = 2;
@@ -113,7 +113,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(953, 75);
+            this.label2.Location = new System.Drawing.Point(897, 73);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 13);
             this.label2.TabIndex = 1;
@@ -122,7 +122,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(953, 240);
+            this.label6.Location = new System.Drawing.Point(897, 235);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(35, 13);
             this.label6.TabIndex = 5;
@@ -130,7 +130,7 @@
             // 
             // TxtName
             // 
-            this.TxtName.Location = new System.Drawing.Point(939, 106);
+            this.TxtName.Location = new System.Drawing.Point(888, 100);
             this.TxtName.Name = "TxtName";
             this.TxtName.Size = new System.Drawing.Size(100, 20);
             this.TxtName.TabIndex = 1;
@@ -139,7 +139,7 @@
             // lblScore
             // 
             this.lblScore.AutoSize = true;
-            this.lblScore.Location = new System.Drawing.Point(953, 194);
+            this.lblScore.Location = new System.Drawing.Point(897, 197);
             this.lblScore.Name = "lblScore";
             this.lblScore.Size = new System.Drawing.Size(13, 13);
             this.lblScore.TabIndex = 3;
@@ -148,7 +148,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(953, 158);
+            this.label3.Location = new System.Drawing.Point(897, 153);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(35, 13);
             this.label3.TabIndex = 2;

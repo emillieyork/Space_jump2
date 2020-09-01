@@ -19,8 +19,8 @@ namespace space_jump
         {
             y =spacing;
             x = 30;
-            width = 20;
-            height = 20;
+            width = 17;
+            height = 17;
             //asteroidImage contains the asteroid1.png image
             asteroidImage = Properties.Resources.asteroid1;
             asteroidRec = new Rectangle(x, y, width, height);

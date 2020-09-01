@@ -24,7 +24,7 @@ namespace space_jump
         Mario mario1 = new Mario();
         Star Star = new Star();
         Heart Heart = new Heart();
-       private bool left, right, Up, Down, jumping;
+       private bool left, right, Up, Down;
         string move;
         int score, lives;
         Rectangle starRec = new Rectangle(0, 0, 15, 17);
@@ -32,7 +32,6 @@ namespace space_jump
         Random rand = new Random();
         Rectangle heartRec = new Rectangle(0, 0, 16, 16);
         Image heart = Properties.Resources.Heart1;
-        int gravity = 5;
 
         public FrmJump()
         {
@@ -52,7 +51,6 @@ namespace space_jump
             if (e.KeyData == Keys.Right) { right = true; }
             if (e.KeyData == Keys.Up) { Up = true; }
             if (e.KeyData == Keys.Down) { Down = true; }
-            if (e.KeyData == Keys.Space)  {  jumping = true; gravity = -5;}
             if (starRec.IntersectsWith(mario1.marioRec)) 
             {
                 TmrStar.Enabled = true;
@@ -82,7 +80,6 @@ namespace space_jump
             if (e.KeyData == Keys.Right) { right = false; }
             if (e.KeyData == Keys.Up) { Up = false; }
             if (e.KeyData == Keys.Down) { Down = false; }
-            if (e.KeyData == Keys.Space) {jumping = false; gravity = 5;}
         }
 
         private void FrmJump_Load(object sender, EventArgs e)
@@ -251,6 +248,7 @@ namespace space_jump
             }
 
             Invalidate();
+           
         }
 
         private void TxtName_TextChanged(object sender, EventArgs e)
@@ -296,52 +294,42 @@ namespace space_jump
             if (score > 20)
             {
                 TmrStroid.Interval = 10;
-                TmrMario.Interval = 39;
             }
             if (score > 40)
             {
                 TmrStroid.Interval = 18;
-                TmrMario.Interval = 39;
             }
             if (score > 60)
             {
                 TmrStroid.Interval = 16;
-                TmrMario.Interval = 39;
             }
             if (score > 80)
             {
                 TmrStroid.Interval = 14;
-                TmrMario.Interval = 39;
             }
             if (score > 100)
             {
                 TmrStroid.Interval = 12;
-                TmrMario.Interval = 39;
             }
             if (score > 120)
             {
                 TmrStroid.Interval = 10;
-                TmrMario.Interval = 39;
             }
             if (score > 140)
             {
                 TmrStroid.Interval = 8;
-                TmrMario.Interval = 39;
             }
             if (score > 160)
             {
                 TmrStroid.Interval = 6;
-                TmrMario.Interval = 39;
             }
             if (score > 180)
             {
                 TmrStroid.Interval = 4;
-                TmrMario.Interval = 39;
             }
             if (score > 200)
             {
                 TmrStroid.Interval = 2;
-                TmrMario.Interval = 39;
             }
         }
 

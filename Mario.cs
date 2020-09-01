@@ -16,10 +16,10 @@ namespace space_jump
             //Create a constructor (initialises the values of the fields)
             public Mario()
             {
-                x = 900;
+                x = 850;
                 y = 360;
-                width = 40;
-                height = 60;
+                width = 35;
+                height = 55;
                 mario1 = Properties.Resources.Mario1;
                 marioRec = new Rectangle(x, y, width, height);
             }
@@ -35,7 +35,7 @@ namespace space_jump
 
                 if (move == "right")
                 {
-                    if (marioRec.Location.X > 10) // is mario within 50 of right side
+                    if (marioRec.Location.X < 850) // is mario within 50 of right side
                     {
 
 
@@ -62,10 +62,10 @@ namespace space_jump
                 }
                 if (move == "Down")
                 {
-                    if (marioRec.Location.X < 10) // is mario within 10 of bottom
+                    if (marioRec.Location.Y > 725) // is mario within 10 of bottom
                     {
 
-                        y = 10;
+                        y = 725;
                         marioRec.Location = new Point(x, y);
                     }
                     else
