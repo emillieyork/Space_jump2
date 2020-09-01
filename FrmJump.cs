@@ -92,6 +92,10 @@ namespace space_jump
             TxtName.Focus();
             TmrMario.Enabled = false;
             TmrStroid.Enabled = false;
+            starRec.X = rand.Next(800);
+            starRec.Y = rand.Next(800);
+            heartRec.X = rand.Next(800);
+            heartRec.Y = rand.Next(800);
         }
 
         private void MnuStart_Click_1(object sender, EventArgs e)
@@ -214,9 +218,6 @@ namespace space_jump
 
             }
             mario1.DrawMario(g);
-           
-         
-
             g.DrawImage(star, starRec);
             g.DrawImage(heart, heartRec);
         }

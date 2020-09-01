@@ -18,8 +18,8 @@ namespace space_jump
 
         public Heart ()
         {
-            x = 384;
-            y = 320;
+            x = 600;
+            y = 800;
             width = 20;
             height = 20;
             // Heart2 contains the pnlgame.png image
