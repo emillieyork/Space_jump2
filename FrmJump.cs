@@ -286,7 +286,6 @@ namespace space_jump
                 TmrStroid.Enabled = false;
                 TmrMario.Enabled = false;
                 MessageBox.Show("Game Over");
-
             }
         }
 
