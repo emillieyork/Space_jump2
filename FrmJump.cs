@@ -249,9 +249,7 @@ namespace space_jump
                 move = "Up";
                 mario1.MoveMario(move);
             }
-
             Invalidate();
-           
         }
 
         private void TxtName_TextChanged(object sender, EventArgs e)
@@ -342,7 +340,7 @@ namespace space_jump
             if (score > 200)
             {
                 TmrStroid.Interval = 2;
-                TmrMario.Interval = 11;
+                TmrMario.Interval = 14;
             }
         }
 
