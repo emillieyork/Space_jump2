@@ -219,6 +219,7 @@ namespace space_jump
             mario1.DrawMario(g);
             g.DrawImage(star, starRec);
             g.DrawImage(heart, heartRec);
+            CheckScore();
         }
 
         private void TmrHeart_Tick(object sender, EventArgs e)
@@ -295,43 +296,53 @@ namespace space_jump
         {
             if (score > 20)
             {
-                TmrStroid.Interval = 10;
+                TmrStroid.Interval = 9;
+                TmrMario.Interval = 2;
             }
             if (score > 40)
             {
-                TmrStroid.Interval = 18;
+                TmrStroid.Interval = 8;
+                TmrMario.Interval = 3;
             }
             if (score > 60)
             {
-                TmrStroid.Interval = 16;
+                TmrStroid.Interval = 7;
+                TmrMario.Interval = 4;
             }
             if (score > 80)
             {
-                TmrStroid.Interval = 14;
+                TmrStroid.Interval = 6;
+                TmrMario.Interval = 5;
             }
             if (score > 100)
             {
-                TmrStroid.Interval = 12;
+                TmrStroid.Interval = 5;
+                TmrMario.Interval = 6;
             }
             if (score > 120)
             {
-                TmrStroid.Interval = 10;
+                TmrStroid.Interval = 4;
+                TmrMario.Interval = 7;
             }
             if (score > 140)
             {
-                TmrStroid.Interval = 8;
+                TmrStroid.Interval = 3;
+                TmrMario.Interval = 8;
             }
             if (score > 160)
             {
-                TmrStroid.Interval = 6;
+                TmrStroid.Interval = 2;
+                TmrMario.Interval = 9;
             }
             if (score > 180)
             {
-                TmrStroid.Interval = 4;
+                TmrStroid.Interval = 2;
+                TmrMario.Interval = 10;
             }
             if (score > 200)
             {
                 TmrStroid.Interval = 2;
+                TmrMario.Interval = 11;
             }
         }
 
